@@ -127,9 +127,22 @@ function setBackToDefault() {
 }
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id, value) {
-  console.log("added to local storage");
+  const grocery = { id: id, value: value };
+  let items = localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+
+  items.push(grocery);
+  localStorage.setItem("list", JSON.stringify(items));
+
+  // console.log("added to local storage");
 }
 
 function removeFromLocalStorage(id) {}
-// ****** SETUP ITEMS **********
 function editLocalStorage(id, value) {}
+// localStorage API
+// setItem
+// getItem
+// removeItem
+// save as strings
+// ****** SETUP ITEMS **********
